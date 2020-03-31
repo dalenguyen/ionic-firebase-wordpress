@@ -1,20 +1,21 @@
-<ion-header [translucent]="true">
-  <ion-toolbar>
-    <ion-title>
-      Blank
-    </ion-title>
-  </ion-toolbar>
-</ion-header>
-
-<ion-content [fullscreen]="true">
-  <ion-header collapse="condense">
+<ion-app>
+  <ion-header>
     <ion-toolbar>
-      <ion-title size="large">Blank</ion-title>
+      <ion-title>WordPress CMS</ion-title>
     </ion-toolbar>
   </ion-header>
 
-  <div id="container">
-    <strong>Ready to create an app?</strong>
-    <p>Start with Ionic <a target="_blank" rel="noopener noreferrer" href="https://ionicframework.com/docs/components">UI Components</a></p>
-  </div>
-</ion-content>
+  <ion-content class="ion-padding">
+    <ion-card *ngFor="let post of posts">
+      <ion-card-header>
+        <ion-card-title>{{post.post_title}}</ion-card-title>
+      </ion-card-header>
+      <ion-card-content>
+        <p>Date <strong>{{post.post_date | date}}</strong></p>
+        <p>By <strong>{{post.post_author}}</strong></p>
+        <img [src]="post.post_thumbnail" alt="{{post.post_title}}" />
+        <p [innerHTML]="post.post_excerpt"></p>
+      </ion-card-content>
+    </ion-card>
+  </ion-content>
+</ion-app>

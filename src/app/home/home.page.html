@@ -1,7 +1,12 @@
 <ion-app>
   <ion-header>
     <ion-toolbar>
-      <ion-title>WordPress CMS</ion-title>
+      <ion-title>WordPress CMS for Mobile Apps</ion-title>
+      <p class="github">
+        <a href="https://github.com/dalenguyen/ionic-firebase-wordpress"
+          >Github</a
+        >
+      </p>
     </ion-toolbar>
   </ion-header>
 
@@ -12,7 +17,7 @@
       </ion-card-header>
       <ion-card-content>
         <p>Date <strong>{{post.post_date | date}}</strong></p>
-        <p>By <strong>{{post.post_author}}</strong></p>
+        <p>By <strong>{{post.post_author_name | titlecase}}</strong></p>
         <img
           [src]="post.post_thumbnail ? post.post_thumbnail : 'https://miro.medium.com/max/4800/1*jFsgUxz4Dm4HDIlpMjz8Sg.png'"
           alt="{{post.post_title}}"

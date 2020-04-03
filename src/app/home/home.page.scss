@@ -29,3 +29,14 @@
 ion-content ion-toolbar {
   --background: translucent;
 }
+
+ion-title {
+  text-align: center;
+}
+
+.github {
+  text-align: center;
+  a {
+    text-decoration: none;
+  }
+}
